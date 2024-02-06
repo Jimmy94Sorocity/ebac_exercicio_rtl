@@ -24,15 +24,16 @@ const Post = () => {
 
   return (
     <div>
-      <PostComments>
+      <PostComments data-testid="post-comments">
         {comments.map(({ comment, id }) => (
           <PostComment1 key={id}>
             <PostCommentContent>{comment}</PostCommentContent>
           </PostComment1>
         ))}
       </PostComments>
-      <PostCommentsForm onSubmit={handleAddComment}>
+      <PostCommentsForm data-testid="form-comments" onSubmit={handleAddComment}>
         <PostCommentsFormTextsarea
+          data-testid="textarea-comments"
           value={tempComment}
           onChange={(e) => setTempComment(e.target.value)}
           required
